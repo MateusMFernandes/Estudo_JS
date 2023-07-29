@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 04</title>
+    <link rel="stylesheet" href="../estilos/style.css">
+    <style>
+        button {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calculando troco</h1>
+    </header>
+    <main>
+        <article>
+            <button onclick="troco()">Calcular</button>
+        </article>
+    </main>
+    <script>
+        function troco() {
+            var recebe =valor_dado-preço
+
+            var nome = window.prompt("Qual produto vocé comprou ?")
+            var preço = Number.parseFloat(window.prompt ("Quanto custa o produto? "))
+            var valor_dado = Number.parseFloat(window.prompt("Quanto vocé deu para pagar o produto ?"))
+
+            window.alert(`Vocé comprou ${nome} que custou R$${preço.toFixed(2,",")}.\nDeu R$${valor_dado} em dinheiro e vai receber R$${valor_dado-preço} de troco`)
+    }
+    </script>
+</body>
+</html>

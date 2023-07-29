@@ -16,6 +16,9 @@ header {
     padding: 50px;
     margin-bottom: 1px solid #882469;
 }
+article {
+    padding: 10px;
+}
 h1 {
     font-size: 3em;
     font-family: old;

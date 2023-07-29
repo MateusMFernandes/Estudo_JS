@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 03</title>
+    <link rel="stylesheet" href="../estilos/style.css">
+    <style>
+        button {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Desafio Antesessor e sucessor</h1>
+    </header>
+  <main>
+    <article>
+        <h2>Antes e depois</h2>
+        <button onclick="Suc_Ant()">Antesessor e sucessor</button>
+    </article>
+  </main>  
+  <script>
+    function Suc_Ant() {
+        var n1 = window.prompt("Escolha um numero: ")
+        window.alert(`Antes do numero ${n1}, vem o numero ${n1-1}\nDepois do numero ${n1}, vem o numero ${Number.parseInt(n1)+1}`)
+        
+    }
+  </script>
+</body>
+</html>

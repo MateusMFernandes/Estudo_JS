@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+    <link rel="stylesheet" href="../estilos/style.css">
+</head>
+<body>
+    <header>
+        <h1>Iniciando estudos com DOM</h1>
+    </header>
+  <main>
+        <article>
+            <p>Aqui vai o resultado </p>
+            <p>Aprendendo a usar <strong>DOM</strong> em Javascript</p>
+            <div>Clique em mim</div>
+        </article>
+    <article>
+        <p>
+            <script>
+                var p2 =window.document.getElementsByTagName('p')[0]
+                var p1 = window.document.getElementsByTagName("p")[1]
+                window.document.write("Esta escrito isso: "+p1.innerHTML+", "+p2.innerText)
+                p1.style.color="white"
+
+
+            </script>
+        </p>
+    </article>
+  </main>
+</body>
+</html>
