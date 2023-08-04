@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+    <link rel="stylesheet" href="../estilos/style.css">
+    <style>
+        div#area{
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            font-size: 1.5em;
+            text-align: center;
+            line-height: 200px;
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Eventos Dom</h1>
+    </header>
+    <main>
+        <article>
+            <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+                Interaja...
+            </div>
+        </article>
+    </main>
+    <script>
+        var a = window.document.getElementById("area")
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseentrar', entrar)
+        a.addEventListener('mouseout', sair)
+                // Não é necesario deixar onclick e etck na div somente event list
+        function clicar() {
+            a.innerText="Clicou!"
+            a.style.background="red"
+        }
+        function entrar() {
+            a.innerText='Entrou!'
+            a.style.background="black"
+            a.style.color="white"
+            a.style.transition="0.5s"
+        }
+        function sair() {
+            a.innerText="Saiu!"
+            a.style.background="gold"
+        }
+    </script>
+</body>
+</html>

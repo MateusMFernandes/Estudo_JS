@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+    <link rel="stylesheet" href="../estilos/style.css">
+    <style>
+        h2 {
+            margin: 10px;
+        }
+        input {
+            margin: 5px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Condições em site</h1>
+    </header>
+    <main>
+        <article>
+            <h2>Sistemas de Multa</h2>
+            <label for="vel">Velocidade do carro:</label><br>
+            <input type="number" name="vel" id="vel"><br>
+            <input type="button" value="Verificar" onclick="calcular()">
+            <div id="Res"></div>
+        </article>
+    </main>
+    <script>
+        function calcular() {
+            var vel = window.document.getElementById('vel')
+            var res = window.document.getElementById('Res')
+            var vel = Number(vel.value)
+            var lim = Number(60)
+            if (vel>lim) {
+                Res.innerHTML = `<p>Sua velocidade é de ${vel}Km, em uma via que é de ${lim}Km, Por tanto vocé foi multado</p>`
+            } else {
+                Res.innerHTML =`<p>Vocé não foi multado</p>`
+            }
+            Res.innerHTML += `<p><strong>Diriga sempre com cuidado</strong></p>`
+            
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../estilos/style.css">
+    <style>
+        h2 {
+            margin: 0px 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Conversor de medidas</h1>
+    </header>
+    <main>
+        <article>
+            <h2>Conversor de medida</h2>
+            <button onclick="calcular()">Converter</button>
+            <div id="caixa"></div>
+        </article>
+    </main>
+    <script>
+        function calcular() {
+            var metros = window.prompt("Quantos metros deseja calcular ?")
+            var caixa = window.document.getElementById("caixa")
+
+            let km = (parseFloat(metros)/10)/10/10
+            let hm = (parseFloat(metros)/10)/10
+            let dam = parseFloat(metros)/10
+            let dm = parseFloat(metros)*10
+            let cm = (parseFloat(metros)*10)*10
+            let mm = (parseFloat(metros)*10)*10*10
+            caixa.innerHTML=`<h2>A distancia de ${metros} Metros correspondem a ...</h2><p>${km.toLocaleString('pt-BR')} Quilômetros (KM)</p><p>${hm.toLocaleString('pt-br')} Hectômetro (HM)</p><p>${dam.toLocaleString('pt-br')} Decâmetro (DAM)</p><p>${dm.toLocaleString('pt-br')} Decímetro (DM)</p><p>${cm.toLocaleString('pt-br')} Centímetro (CM)</p><p>${mm.toLocaleString('pt-br')} Milímetro (MM)</p>`
+        }
+    </script>
+</body>
+</html>

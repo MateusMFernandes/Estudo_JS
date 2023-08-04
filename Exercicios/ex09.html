@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+    <link rel="stylesheet" href="../estilos/style.css">
+    <style>
+        h2 {
+            margin: 10px;
+        }
+        input {
+            margin: 5px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Seu Pais</h1>
+    </header>
+    <main>
+        <article>
+            <h2>Qual país vocé nasceu ?</h2>
+                <label for="pais">País:</label><br>
+                <input type="text" name="pais" id="pais"><br>
+                <input type="button" value="Verificar" onclick="verificar()">
+                <div id="res"></div>
+        </article>
+    </main>
+    <script>
+        function verificar() {
+            var pais = window.document.getElementById("pais").value
+            var res = window.document.getElementById('res')
+            
+            if (pais == 'Brasil') {
+                res.innerText="Vocé é Brasileiro!"
+            } else {
+                res.innerText="Vocé é Estrangeiro!"
+            }
+            
+        }
+
+    </script>
+</body>
+</html>
