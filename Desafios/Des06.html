@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+    <link rel="stylesheet" href="../estilos/style.css">
+    <style>
+        h2 {
+            margin: 10px;
+        }
+        input {
+            margin: 0px 8px;
+            padding: 10px 20px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Conversor de Temperatura</h1>
+    </header>
+    <main>
+        <article>
+            <p>Converter temperatura</p>
+            <input type="button" value="Converte" onclick="converter()">
+            <div id="resultado">
+
+            </div>
+        </article>
+    </main>
+    <script>
+        function converter() {
+            var celsius = parseFloat(window.prompt("Digite a temperatura em ºC (CELSIUS)"))
+            var kelvin = celsius + 273.15
+            var fahren = ((celsius * 9/5) +32)
+
+            resultado.innerHTML=`<h2>A temperatura de ${celsius.toLocaleString('pt-br')}ºC, corresponde a ... </h2><br><p>Kelvin: ${kelvin.toLocaleString('pt-br')}ºK</p><br><p>Fahrenheit: ${fahren.toLocaleString('pt-br')}ºF</p>`
+        }
+    </script>
+</body>
+</html>

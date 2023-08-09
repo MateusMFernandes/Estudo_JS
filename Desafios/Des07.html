@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+    <link rel="stylesheet" href="../estilos/style.css">
+    <style>
+        input {
+            margin: 5px 0px;
+            padding: 10px 20px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Conversor Monetario</h1>
+    </header>
+    <main>
+        <article>
+            <h2>Conversor </h2>
+            <input type="button" value="Converter" onclick="conversão()">
+            <div id="resultado">
+                <p>Clique no botão para iniciar</p>
+            </div>
+        </article>
+    </main>
+    <script>
+        var cotação = parseFloat(window.prompt("Qual a cotação do dolar ?"))
+        function conversão() {
+            var reais = parseFloat(window.prompt("Quantos reais vocé tem na carteira?"))
+            var dolar = (reais / cotação).toFixed(2)
+            resultado.innerHTML=`<p>Vocé tem o total de U$${dolar} dolar</p>`
+        }
+    </script>
+</body>
+</html>

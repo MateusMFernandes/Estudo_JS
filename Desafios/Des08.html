@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desconto</title>
+    <link rel="stylesheet" href="../estilos/style.css">
+    <style>
+        input {
+            margin: 5px 0px;
+            padding: 10px 20px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Desconto</h1>
+    </header>
+    <main>
+        <article>
+            <h2>Calcular Desconto</h2>
+            <input type="button" value="Desconto de 10%" onclick="calcular()">
+            <div id="resultado">
+                <p>Clique no botão acima para iniciar</p>
+            </div>
+        </article>
+    </main>
+    <script>
+        function calcular() {
+            var produto = window.prompt("Qual produto vocé esta comprando?")
+            var preço = Number(window.prompt(`Qual o preço do ${produto}?`))
+            resultado.innerHTML=`<h2>Calculando o desconto de 10% para ${produto}</h2><p>O preço original do produto era de ${preço.toLocaleString('pt-br')}</p>`
+        }
+    </script>
+</body>
+</html>
