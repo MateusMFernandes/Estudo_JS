@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        input {
+            margin: 5px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contador de passos</h1>
+    </header>
+    <section>
+        <div>
+            <form>
+                <label for="inicio">Inicio:</label>
+                <input type="number" name="inicio" id="inicio"><br>
+                <label for="fim">Fim:</label>
+                <input type="number" name="fim" id="fim"><br>
+                <label for="passos">Passos:</label>
+                <input type="number" name="passos" id="passos"><br>
+                <input type="button" value="Contar" onclick="contar()">
+            </form>
+        </div>
+        <div id="result">
+
+        </div>
+    </section>
+    <footer>
+        <p>&copy;Cursoemvideo</p>
+    </footer>
+    <script>
+        function contar() {
+            var inicio = Number(document.getElementById("inicio").value)
+            var fim = Number(document.getElementById("fim").value)
+            var passos = Number(document.getElementById("passos").value)
+            while (inicio<fim) {
+
+                result.innerHTML+=`${inicio} 👉`
+                var inicio = inicio+passos
+            }
+            result.innerHTML +='🏁'
+        }
+
+    </script>
+</body>
+</html>

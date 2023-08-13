@@ -29,8 +29,14 @@
     <script>
         function calcular() {
             var produto = window.prompt("Qual produto vocé esta comprando?")
-            var preço = Number(window.prompt(`Qual o preço do ${produto}?`))
-            resultado.innerHTML=`<h2>Calculando o desconto de 10% para ${produto}</h2><p>O preço original do produto era de ${preço.toLocaleString('pt-br')}</p>`
+            var preço = parseFloat(window.prompt(`Qual o preço do ${produto}?`)).toFixed(2)
+            var desconto = (preço/100)*10
+            var total = preço - desconto
+
+            resultado.innerHTML=`<h2>Calculando o desconto de 10% para ${produto}</h2>\n
+            <p>O preço original do produto era de ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(preço)}.</p>\n
+            <p>Vocé acaba de ganhar ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(desconto)} de desconto.</p>\n
+            <p>Vocé vai pagar o total de ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(total)} no produto ${produto}.`
         }
     </script>
 </body>

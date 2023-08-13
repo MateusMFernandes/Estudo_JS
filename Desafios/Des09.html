@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste</title>
+    <link rel="stylesheet" href="../estilos/style.css">
+    <style>
+        button {
+            margin: 10px 0px;
+            padding: 10px 20px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Reajuste salarial</h1>
+    </header>
+    <main>
+        <article>
+            <h2>Clique no botão de Reajuste</h2>
+            <button id="botao">Reajuste</button>
+            <div id="resultado">
+                
+            </div>
+        </article>
+    </main>
+    <script>
+        var botao = document.getElementById('botao')
+        botao.addEventListener('click', calcular)
+
+        function calcular() {
+           var nome = window.prompt("Qual nome do Funcionario ?")
+           var salario = parseFloat(window.prompt(`Qual salario de ${nome} ?`)).toFixed(2)
+           var porcentagem = window.prompt(`Qual a porcentagem de aumento salarial de ${nome}?`)
+
+           var totalpor = (salario/100)*porcentagem
+           var novosal = Number(salario) + totalpor
+
+           resultado.innerHTML=`<h2>${nome}, Recebeu um aumento Salarial!</h2>\n
+           <p>O salario atual erá de ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(salario)}</p>\n
+           <p>Com o aumento de ${porcentagem}%, o salario vai aumentar em ${new Intl.NumberFormat('pt-br', {style: "currency", currency:'BRL'}).format(totalpor)} no próximo mês.</p>\n
+           <p>E apartir dai, ${nome} vai passar a receber ${new Intl.NumberFormat('pt-br', {style: "currency", currency: 'BRL'}).format(novosal)}</p>`
+        }
+    </script>
+</body>
+</html>
