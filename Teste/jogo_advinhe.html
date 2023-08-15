@@ -90,5 +90,22 @@
     document.body.appendChild(botaoreinicio)
     botaoreinicio.addEventListener("click", reiniciarJogo)
   }
+  function reiniciarJogo() {
+    contagempalpite=1
+    var reiniciarParas =document.querySelectorAll(".resultadosPara p")
+    for (let i = 0; i < reiniciarParas.length; i++) {
+      reiniciarParas[i].textContent=""
+      
+    }
+    botaoreinicio.parentNode.removeChild(botaoreinicio)
+    campoPalpite.focus()
+    campoPalpite.disabled='false'
+    envioPalpite.disabled='false'
+    campoPalpite.value=""
+
+    ultimoResultado.style.backgroundColor='white'
+
+    numerosAleatorio=Math.floor(math.random()*100)+1
+  }
 </script>
 </html>

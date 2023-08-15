@@ -39,12 +39,24 @@
             var inicio = Number(document.getElementById("inicio").value)
             var fim = Number(document.getElementById("fim").value)
             var passos = Number(document.getElementById("passos").value)
-            while (inicio<fim) {
 
-                result.innerHTML+=`${inicio} 👉`
-                var inicio = inicio+passos
+            if (inicio<=fim && passos > 0) {
+                while (inicio<fim) {
+                    result.innerHTML+=`${inicio} 👉`
+                    var inicio = inicio+passos
+                    }
+                    result.innerHTML +='🏁'
+            } else if (inicio>fim) {
+                window.alert("[ERRO], meu inicio não pode ser maior que o fim.")
+            } else if (passos === 0){
+                window.alert("Meu passo não pode ser marcado como 0, considerando isso o passo sera marcado como 1")
+                while (inicio<=fim) {
+                    result.innerHTML+=`${inicio} 👉`
+                    inicio++
+                }
+                    result.innerHTML +='🏁'
             }
-            result.innerHTML +='🏁'
+            
         }
 
     </script>
