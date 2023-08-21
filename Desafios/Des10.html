@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Bhaskara</title>
+    <link rel="stylesheet" href="../estilos/style.css">
+</head>
+<body>
+    <header>
+        <h1>Desafio</h1>
+    </header>
+    <main>
+        <article>
+            <h2>Resolvendo Bhaskara</h2>
+            <input type="button" value="Calcular" id="calcular">
+            <div id="resultado">
+
+            </div>
+        </article>
+    </main>
+    <script>
+        var calcular = document.getElementById("calcular")
+        calcular.addEventListener("click", calculo)
+        function calculo() {
+            var a = window.prompt("Qual valor de a ?")
+            var b = window.prompt("Qual valor de b ?")
+            var c = window.prompt("Qual valor de c ?")
+
+            var delta = (b*b) -4*a*c
+
+            var div = document.getElementById("resultado")
+            var p = document.createElement("p")
+            div.appendChild(p)
+
+            p.innerHTML=`<h2>Resolvendo Bhaskara</h2>\n
+            A equação atual é ${a}x² + ${b}x + ${c} = ${delta}<br>\n
+            O calculo realizado será ▲ = ${b}-4.${a}.${c}<br>\n
+            O valor calculado foi ▲ = ${delta}`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>numero</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        select {
+            margin-top: 15px;
+            width: 150px;
+        }
+        button {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Numeros com array</h1>
+    </header>
+    <section>
+        <div>
+           <label for="numero">Número:</label>
+           <input type="number" name="numero" id="fnum">
+           <input type="button" value="Gerar" onclick="adicionar()">
+        </div>
+        <div>
+            <select name="flist" id="flist" size="10">
+                
+            </select>
+            <button onclick="finalizar()">finalizar</button>
+            <div id="res">
+
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy;Cursoemvideo</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

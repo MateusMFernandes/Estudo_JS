@@ -6,13 +6,7 @@
     <title>Tabuada</title>
     <link rel="stylesheet" href="estilo.css">
     <style>
-        div#container {   
-             margin: 10px;
-             height: 281px;
-             width: 121px;
-             padding: 10px;
-             border: 1px solid black;
-        }
+
         p#tab {
             margin: 2px 0px;
         }
@@ -28,8 +22,10 @@
            <input type="number" name="numero" id="numero">
            <input type="button" value="Gerar Tabuada" onclick="gerar()">
         </div>
-        <div id="container">
-            <p id="result"></p>
+        <div>
+            <select name="tabuada" id="seltab" size="10">
+                <option>Digite o numero da tabuada...</option>
+            </select>
         </div>
     </section>
     <footer>
@@ -38,11 +34,16 @@
     <script>
         function gerar() {
             var numero = Number(document.getElementById("numero").value)
-            
+            let seltab = document.getElementById("seltab")
+
+                seltab.innerHTML=''
             for (var tabuada = 1; tabuada <= 10; tabuada++) {
+                var item = document.createElement("option")
+                seltab.appendChild(item)
                 var resp = tabuada*numero
-                result.innerHTML +=`<p id='tab'>${tabuada} x ${numero} = ${resp}</p>`
+                item.innerHTML +=`${tabuada} x ${numero} = ${resp}`
             }
+            
         }
     </script>
 </body>
