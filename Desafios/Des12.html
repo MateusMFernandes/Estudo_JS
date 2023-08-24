@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 12</title>
+    <link rel="stylesheet" href="../estilos/style.css">
+</head>
+<body>
+    <header>
+        <h1>Vereficador de preço</h1>
+    </header>
+    <main>
+        <article>
+            <h2>Preço mudou</h2>
+            <input type="button" value="Verificar" id="botao">
+            <div id="resultado">
+                <p>Clique no botão acima para analisar a mudança de preço.</p>
+            </div>
+        </article>
+    </main>
+    <script>
+        var botao = document.getElementById("botao")
+        botao.addEventListener('click', verificar)
+        var res = document.getElementById("resultado")
+
+        function verificar() {
+            var preAnt = window.prompt("Qual o preço anterior do produto ?")
+            var preAt = window.prompt("Qual o preço atual do produto ?")
+            res.innerHTML=""
+
+            if (preAnt == 0 || preAt == 0) {
+                window.alert("ERRO, digite um numero!")
+
+            } else if (preAnt < preAt) {
+                var variação = (preAt-preAnt)/preAnt*100
+
+                res.innerHTML += `<h2>Analisando os valores informado</h2>`
+
+                res.innerHTML += `<p>O produto que custava ${new Intl.NumberFormat('pt-br',{style: "currency", currency:"BRL"}).format(preAnt)} passou a custar ${new Intl.NumberFormat('pt-br',{style: "currency", currency:"BRL"}).format(preAt)}</p>`
+
+                res.innerHTML += `<p>Hojé o produto está mais caro!</p>`
+
+                res.innerHTML += `<p>O preço subiu ${new Intl.NumberFormat('pt-br',{style: "currency", currency:"BRL"}).format(preAt-preAnt)} em relação ao preço anterior</p>`
+
+                res.innerHTML += `<p>Uma variação de ${variação.toFixed(2)}% para cima.</p>`
+
+            } else if (preAnt > preAt) {
+                var variação = (preAnt-preAt)/preAt*100
+                res.innerHTML += `<h2>Analisando os valores informado</h2>`
+
+                res.innerHTML += `<p>O produto que custava ${new Intl.NumberFormat('pt-br',{style: "currency", currency:"BRL"}).format(preAnt)} passou a custar ${new Intl.NumberFormat('pt-br',{style: "currency", currency:"BRL"}).format(preAt)}</p>`
+
+                res.innerHTML += `<p>Hojé o produto está mais barato!</p>`
+
+                res.innerHTML += `<p>O preço caiu ${new Intl.NumberFormat('pt-br',{style: "currency", currency:"BRL"}).format(preAnt-preAt)} em relação ao preço anterior</p>`
+
+                res.innerHTML += `<p>Uma variação de ${variação.toFixed(2)}% para baixo.</p>`
+            }
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 12</title>
+    <link rel="stylesheet" href="../estilos/style.css">
+    <style>
+        span {
+            font-weight: bold;
+            color: green;
+            background-color: rgb(82, 211, 82);
+        }
+        span#rec {
+            font-weight: bold;
+            color: rgb(97, 97, 1);
+            background-color: rgb(194, 194, 2);
+        }
+        span#rep {
+            font-weight: bold;
+            color: rgb(92, 1, 1);
+            background-color: rgb(219, 2, 2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calculo de media</h1>
+    </header>
+    <main>
+        <article>
+            <h2>Situação do aluno</h2>
+            <input type="button" value="Cadastrar as notas" onclick="calcular()">
+            <div id="resultado">
+                <p>Clique no botão acima para calcular as notas</p>
+            </div>
+        </article>
+    </main>
+    <script>
+        function calcular() {
+            var aluno = {
+                nome:window.prompt("Qual seu nome ?"),
+                nota1:Number(window.prompt("Qual valor da primeira nota")),
+                nota2:Number(window.prompt("Qual valor da segunda nota ?")),
+            }
+                
+                var resultado = document.getElementById("resultado")
+                let media = (aluno.nota1+aluno.nota2)/2
+
+                resultado.innerHTML =""
+                resultado.innerHTML +=`<h2>Analisando a situação de ${aluno.nome}</h2>`
+                resultado.innerHTML +=`<p>Com as notas ${aluno.nota1} e ${aluno.nota2} a <strong>média é ${media}</strong></p>`
+
+
+                if (media >= 6) {
+                    resultado.innerHTML += `<p>Com a média acima de 6,0 o aluno está <span>APROVADO</span></p>`
+                } else if (media >= 3 && media < 6) {
+                    resultado.innerHTML += `<p>Com a média entre 3,0 e 6,0 o aluno está de <span id="rec">RECUPERAÇÃO</span></p>`
+                } else {
+                    resultado.innerHTML += `<p>Com a média abaixo de 3,0 o aluno está <span id="rep">REPROVADO</span></p>`
+                }
+
+
+        }
+    </script>
+</body>
+</html>

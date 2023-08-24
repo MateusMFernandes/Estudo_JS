@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ano</title>
     <link rel="stylesheet" href="../estilos/style.css">
+    <style>
+        span {
+            font-weight: bold;
+            color: green;
+            background-color: rgb(80, 185, 80);
+        }
+        span#color {
+            font-weight: bold;
+            color: rgb(141, 1, 1);
+            background-color: rgb(252, 47, 47);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -28,11 +40,9 @@
             let ano = window.prompt("Qual ano ?")
             if (ano%4==0) {
             
-                resp.innerHTML=`O Ano de ${ano} <strong id="color">É BISSEXTO</strong>`
-                document.body.appendChild(color).style.backgroundColor="blue"
+                resp.innerHTML=`<h2>O Ano de ${ano} <span>É BISSEXTO</span></h2>`
             } else {
-                resp.innerHTML=`O ano de ${ano} <strong id="color">NÃO É BISSEXTO</strong>`
-                document.body.appendChild(color).style.backgroundColor="red"
+                resp.innerHTML=`<h2>O ano de ${ano} <span id="color">NÃO É BISSEXTO X</span></h2>`
 
             }
         }
