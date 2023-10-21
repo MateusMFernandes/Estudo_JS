@@ -1,8 +1,10 @@
-let idiomas = "português,inglês,francês,espanhol";
+const usuario = 'Fabiana Teles';
+const limiteChar = 10;
 
-let array_idiomas = idiomas.split(",");
+const validaCampo = (false ) && true;
 
-for( const idioma of array_idiomas )
-{
-   console.log("Idioma: " + idioma);
+   if(usuario.length < validaCampo){
+  console.log('Dados válidos');} 
+  else {
+  console.log('O limite de caracteres é:' + limiteChar);
 }
