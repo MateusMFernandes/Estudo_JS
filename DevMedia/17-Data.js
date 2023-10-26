@@ -19,7 +19,7 @@ console.log(data.getSeconds())//segundos
 console.log(data.getMilliseconds())//segundos
 console.log(data.getDay())//retorna o dia da semana
 
-console.log(data.getTime())//representa quantos milesegundos se passaram desde 
+console.log(data.getTime())//retorna o timestamp
 console.log(data.getTimezoneOffset())//retorna diferença de fusos horario
 console.log(data.valueOf())//retorna o valor primitivo do objeto
 
