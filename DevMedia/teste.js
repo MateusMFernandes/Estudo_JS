@@ -1,24 +1,26 @@
-import rl from "readline-sync"
+function retorna_status_aluno(nota_1, nota_2)
+{
 
-function lucro() {
-    const quantidade = rl.question("Quantas unidades vendidas: ")
-    let valor_1 = rl.question("Valor de venda: ")
-    const valor_2 = rl.question("Valor de Compra: ")
-    const porcentagem = rl.question("Porcentagem: ")
-    const porcentagem_lucro = (valor_1*quantidade)/porcentagem
+    let media = (nota_1 + nota_2) / 2;
+    let status;
 
-    console.log(`total de lucro é de ${porcentagem_lucro}`)
+   
+if
+(media >= 6){
+       
+status =
+ "aprovado";
+    }  
+else
+{
+         
+status =
+ "reprovado";
+    }
+
+   
+return status
+;
+
 }
-lucro()
-
-
-/*function corote() {
-    const qcorote = Number(document.getElementById("corote").value)
-    const respCorote = document.getElementById("resCorote")
-
-    const porcorote = (5.50*qcorote)/100*44
-    const valcorote = 5.50*qcorote
-
-    respCorote.innerHTML =`<p>Lucro: ${porcorote}</p>\n
-    <p>Valor total: ${valcorote}</p>`
-}*/
+console.log(retorna_status_aluno(10,6))
