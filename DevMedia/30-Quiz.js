@@ -9,4 +9,4 @@ Digite a resposta (ano): `)
 Rev_Francesa != 1920?"Resposta errada":"Resposta certa"
 console.log(Rev_Francesa)
 
-//funçoes para fazer: Coleção de dados, Questoes aleatorias, Exibir perguntas,  validar resp usuario, exibir result
+//funçoes para fazer: Coleção de dados, Questoes aleatorias, Exibir perguntas,  validar resp usuario, exibir resulta 
