@@ -1,20 +1,33 @@
-const jogos = [
-  { id: 1, nome: 'Galaxian', anoLancamento: 1979, plataforma: 'Fliperama' },
-  { id: 2, nome: 'Donkey Kong', anoLancamento: 1981, plataforma: 'Fliperama' },
-  { id: 3, nome: 'Ms. Pac-Man', anoLancamento: 1981, plataforma: 'Fliperama' },
-  { id: 4, nome: 'Payday 2 ', anoLancamento: 2011, plataforma: 'Xbox 360' },
-  { id: 5, nome: 'God of War 4', anoLancamento: 2020, plataforma: 'PS4' },
-  { id: 6, nome: 'Spider-Man: Miles Morales', anoLancamento: 2020, plataforma: 'PS4' },
-];
+let alunos = [
+    {nome: 'Clara', idade: 18},
+    {nome: 'Milena',idade: 19},
+    {nome: 'Rodrigo', idade: 17},
+    {nome: 'Thiago', idade: 19}
+    ];
 
-function imprimirJogo(jogo) {
-  console.log( jogo.nome + ' - ' + jogo.anoLancamento );
+    function verificaAlunosMaiores(aluno) {
+    return (aluno.idade > 18);
 }
 
-function retornaJogosFliperama(jogo) {
-  return jogo.plataforma == 'Fliperama';
-};
+function filtraAlunosMaiores(alunos)
+{
+    let alunosFiltro = alunos.filter(verificaAlunosMaiores);
+    return alunosFiltro;
+}
 
-const jogosFliperama = jogos.filter(retornaJogosFliperama);
+function retornaNomesAlunos(alunos)
+{
+    let nomes = alunos.map(aluno =>aluno.nome);
+    return nomes;
+}
 
-jogosFliperama.forEach(imprimirJogo);
+function imprimeNomesAlunos(arrayNomes)
+{
+    arrayNomes.forEach(nome => {
+        console.log(nome);
+    });
+}
+
+let alunosMaiores = filtraAlunosMaiores(alunos);
+let nomesAlunos = retornaNomesAlunos(alunosMaiores);
+imprimeNomesAlunos(nomesAlunos);
