@@ -1,19 +1,20 @@
-const express = require('express');
+const express = require('express')
 const app = express();
 
-let data = new Date();
+const filmes = [
+    { 'titulo': 'Filme 1', 'genero': 'terror' },
+    { 'titulo': 'Filme 2', 'genero': 'doc' },
+    { 'titulo': 'Filme 3', 'genero': 'drama' },
+    { 'titulo': 'Filme 4', 'genero': 'aventura' },
+    { 'titulo': 'Filme 5', 'genero': 'suspense' }
+];
 
-let ano_nascimento = 1991;
-let ano_atual = data.getFullYear();
-
-let idade = ano_atual - ano_nascimento;
-
-let idade_json = {idade:idade};
-
-app.get('/', (req, res) => {
-    res.json(idade_json);
+app.get('/filmes', (req, res) => {
+    const generoFilme = req.query.genero;
+    const filmesPorGenero = filmes.filter(filme => filme.genero == generoFilme);
+    res.send(filmesPorGenero);
 });
 
-app.listen(8080, () => {
-   console.log("Servidor iniciado");
+app.listen(3000, () => {
+    console.log('Servidor rodando na porta 3000');
 });

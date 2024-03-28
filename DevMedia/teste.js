@@ -1,19 +1,14 @@
-const express = require('express');
-const app = express();
+let nome = "Jackeline";
 
-let data = new Date();
+let texto = `${nome} é muito legal!`;
 
-let ano_nascimento = 1991;
-let ano_atual = data.getFullYear();
+let novoTexto = texto.replace("legal", "simpática");
 
-let idade = ano_atual - ano_nascimento;
+console.log(novoTexto)
+novoTexto = novoTexto.length
 
-let idade_json = {idade:idade};
-
-app.get('/', (req, res) => {
-    res.json(idade_json);
-});
-
-app.listen(8080, () => {
-   console.log("Servidor iniciado");
-});
+if(novoTexto > 20){
+	console.log("Texto longo!");
+} else{
+	console.log("Texto curto!");
+}

@@ -1,0 +1,18 @@
+function converteTemperatura(temperatura, conversor) {
+    let resultado
+    if (conversor == 'C') {
+        resultado = converteParaCelsius(temperatura)
+    } else if (conversor == 'F') {
+        resultado = converteParaFahren(temperatura)
+    }
+    return resultado
+}
+function converteParaCelsius(fahrenheit) {
+    let celsius = (fahrenheit - 32) / 1.8
+    return celsius
+}
+function converteParaFahren(celsius) {
+    let fahrenheit = (celsius*1.8)+32
+    return fahrenheit
+}
+exports.converteTemperatura=converteTemperatura
