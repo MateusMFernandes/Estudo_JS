@@ -1,23 +1,23 @@
-const express = require('express');
-const app = express();
+const express = require('express')
+const app = express()
 
-function agendaMensagem(agenda) {
-  
-if(agenda == 1){
-    	return "Hoje vou jogar vídeo game";
-  } else if (agenda == 0){
-    	return "Hoje vou assistir um filme";
-  } else{
-    	return "Hoje vou dormir";
+const livros = [
+  { id: 1, titulo: 'Dom Quixote', autor: 'Miguel de Cervantes' },
+  { id: 2, titulo: '1984', autor: 'George Orwell' },
+  { id: 3, titulo: 'Orgulho e Preconceito', autor: 'Jane Austen' },
+  { id: 4, titulo: 'Cem Anos de Solidão', autor: 'Gabriel García Márquez' },
+];
+
+app.get('/livros', (req, res) => {
+  const id = Number(req.query.id);
+  const livro = livros.find(livro => livro.id == id);
+
+  if (livro) {
+    res.json(livro);  
+  } else {
+    res.status(404).send();
   }
-}
-
-app.get('/agenda', (req, res) => {
-  const agenda = parseInt(req.query.agenda);
-  const msg = agendaMensagem(agenda);
-  res.json({mensagem: msg});
 });
-
-app.listen(8080, () => {
-  console.log('Servidor node iniciado em: ' + new Date());
-});
+app.listen(8080,() =>{
+  console.log('Servidor aberto')
+})

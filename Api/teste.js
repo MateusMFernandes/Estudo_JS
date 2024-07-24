@@ -1,20 +1,29 @@
 const express = require('express')
-const app = express();
+const app = express()
 
-const filmes = [
-    { 'titulo': 'Filme 1', 'genero': 'terror' },
-    { 'titulo': 'Filme 2', 'genero': 'doc' },
-    { 'titulo': 'Filme 3', 'genero': 'drama' },
-    { 'titulo': 'Filme 4', 'genero': 'aventura' },
-    { 'titulo': 'Filme 5', 'genero': 'suspense' }
-];
-
-app.get('/filmes', (req, res) => {
-    const generoFilme = req.query.genero;
-    const filmesPorGenero = filmes.filter(filme => filme.genero == generoFilme);
-    res.send(filmesPorGenero);
-});
-
-app.listen(3000, () => {
-    console.log('Servidor rodando na porta 3000');
-});
+const planetas = [
+    { id: 1, nome: 'Mercúrio' },
+    { id: 2, nome: 'Vênus' },
+    { id: 3, nome: 'Terra' },
+    { id: 4, nome: 'Marte' },
+    { id: 5, nome: 'Júpiter' },
+    { id: 6, nome: 'Saturno' },
+    { id: 7, nome: 'Urano' },
+    { id: 8, nome: 'Netuno' },
+  ];
+  
+  app.get('/planeta/:id', (req, res) =>{
+    const id = parseInt(req.params.id);
+  
+    const planeta = planetas.find(planeta => planeta.id === id);
+  
+    if (planeta) {
+      res.json(planeta);
+    } else {
+     res.status(404).json({ erro : 'Planeta não encontrado'});
+    }
+  });
+  
+  app.listen (3000, () =>{
+    console.log('Servidor iniciado na porta 3000');
+  });
